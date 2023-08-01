@@ -24,3 +24,6 @@ solution:
 
 # Sageplot hidden option
 - use \sageplot[width=\textwidth] for example
+
+# Use dmath environment for long expressions
+- adds newlines in appropriate places
