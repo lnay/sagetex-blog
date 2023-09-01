@@ -68,6 +68,11 @@ into the equations extending into the margins, or even off the page.
 
 ```latex
 % demonstrate coefficients of particularly long binomial expansion
+
+\begin{sagesilent}
+    var("x y") # declare symbols for 'x' and 'y'
+\end{sagesilent}
+
 \begin{equation}
     \sage{expand((x+y)^10)}
 \end{equation}
@@ -81,6 +86,8 @@ however it breaks the equation over multiple lines appropriately.
 ```latex
 % in preamble:
 \usepackage{breqn}
+
+
 % ... in document body
 \begin{sagesilent}
 var("x y") # declare symbols for 'x' and 'y'
