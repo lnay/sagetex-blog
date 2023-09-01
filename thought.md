@@ -38,7 +38,7 @@ people use separate tools to create diagrams. Idealogically, this impacts
 reproducibility of the research. But via SageTex, it's also easier to use the same
 expressions to generate latex formulae, as creating a plot.
 
-# SageMath plot sizing
+# TIP 1: SageMath plot sizing
 
 Although, not present in the official tutorials, the
 [official example](https://github.com/sagemath/sagetex/blob/master/example.tex)
@@ -62,7 +62,7 @@ tutorial page.
 The rest of the tips here however, are completely different to what you may
 find in the official material.
 
-# Use dmath environment for long expressions
+# TIP 2: Use dmath environment for long expressions
 When generating long latex expressions into equation environments, you may run
 into the equations extending into the margins, or even off the page.
 
@@ -102,7 +102,7 @@ var("x y") # declare symbols for 'x' and 'y'
 (show render)
 
 
-# Use latex hackery to overcome Sage limitations
+# TIP 3: Use latex hackery to overcome Sage limitations
 
 ## Problem
 
@@ -218,7 +218,7 @@ second_twisted_chern = var("kappa")
 This would render to:
 $$\left(\mathrm{ch}\_2^\beta(v) + 1\right)^2$$
 
-# Don't put everything into sagesilent
+# TIP 4: Don't put everything into sagesilent
 
 problems:
 - slow feedback loop
@@ -231,5 +231,5 @@ solution:
 - Makefile can be used to develop in sagemath notebook, but reference to python
   - don't explicity print (to keep import cleaner)
 
-# Use my docker container for git(hub/lab) CI
+# TIP 5: Use my docker container for git(hub/lab) CI
 
