@@ -189,7 +189,7 @@ unintended consequences in other parts of the document:
 \endgroup % end of scope redefining \beta
 ```
 
-In this example, $\beta$ is redefined to be a relatively similar $\beta^1_-$.
+In this example, $\beta$ is redefined to be a relatively similar $\beta^n_-$.
 The variable name in the Sage code is still `beta`, but happens to still fit
 quite well.
 However, you may want to create a symbol which displays to something very
