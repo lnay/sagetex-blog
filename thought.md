@@ -253,7 +253,7 @@ It's natural to do the initial development in notebook and copy-paste into the
 SageTex environments, however you may decide to develop on the code some more
 but will now find yourself in a more difficult environent.
 My thesis here is that you should never copy-paste the code into SageTex
-environments and leave the Jupyter notebook.
+environments and hence never leave the Jupyter notebook.
 
 There are also a few extra knacks which I have with developing in the SageTex
 environments, but these are more likely to be noticed by people with more
