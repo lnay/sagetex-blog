@@ -45,11 +45,11 @@ Although, not present in the official tutorials, the
 shows some invaluable options for the `\sageplot` function to adjust sizing
 among other things.
 The most common usages I have are:
+```latex
+\sageplot[width=\textwidth]{...}
 ```
-\sageplot[width=\textwidth]
-```
-```
-\sageplot[width=\linewidth]
+```latex
+\sageplot[width=\linewidth]{...}
 ```
 If you have trouble sizing plots correctly, especially in subfigures, this
 might be your solution.
