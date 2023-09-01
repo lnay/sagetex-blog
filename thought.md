@@ -201,6 +201,8 @@ second_twisted_chern = var("kappa")
 \end{equation*}
 \endgroup % end of scope redefining \kappa (second_twisted_chern)
 ```
+This would render to:
+$$(\mathrm{ch}\_2^\beta- + 1)^2$$
 
 # Don't put everything into sagesilent
 
