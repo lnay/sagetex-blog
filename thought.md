@@ -1,4 +1,39 @@
-Provide a minimal example/template
+# Using SageTex in larger articles in a sane way
+
+I've recently been using
+[SageTex](https://doc.sagemath.org/html/en/tutorial/sagetex.html) in my
+research writing.
+There's been ups and downs, benefits but also multiple drawbacks to my
+workflows until I finally settled on how to do things in a *SANE* way to
+overcome the limitations in the methods demonstrated in the
+[official tutorials](https://doc.sagemath.org/html/en/tutorial/sagetex.html).
+I've decided that instead of venting over my experiences, maybe it's better to
+channel some more positive energy into these **TOP TIPS** for using sagetex in
+larger projects.
+
+
+To set the expectations, let me clarify on my personal reasons for including
+SageMath code into my document building:
+
+### 1) Programmatically generate latex expressions to avoid errors
+(add tiny example)
+
+At the point when I decided to start using SageTex, I was frequently making
+mistakes in the expressions I was deriving. Particularly when specializing
+expressions to different contexts, where there are different coefficients
+involved which were easily mixed up. Sometimes the expressions were just long.
+Having a CAS do these calculations added an extra degree of certainty to my
+work. Furthermore, including the code inside the project (as opposed to doing
+it separately) just keeps the calculation steps *on record* easily checked in
+case I worry I had done something incorrectly.
+
+### 2) Include plot creation into the document build
+(add tiny example)
+
+Instead of generating plots programmatically inside the latex document, most
+people use separate tools to create diagrams. Idealogically, this impacts
+reproducibility of the research. But via SageTex, it's also easier to use the same
+expressions to generate latex formulae, as creating a plot.
 
 # Don't put everyting into sagesilent
 
