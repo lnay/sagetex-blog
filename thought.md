@@ -110,11 +110,11 @@ document, is that symbols in SageMath, unlike in
 identifiers.
 The latex representations are then a product of the Python identifiers.
 Typically, the latex representation is precisely the identifier, such as:
-`x` is displayed $$x$$ (with latex `x`), and `a_t` would be displayed $$a_t$$
+`x` is displayed $x$ (with latex `x`), and `a_t` would be displayed $a_t$
 (with latex `a_t`).
 Although the backslash `\` is disallowed in Python identifiers, certain latex
 command names are recognised and treated appropriately, for example:
-`Phi_t` is displayed $$\Phi_t$$ (with latex `\Phi_t`).
+`Phi_t` is displayed $\Phi_t$ (with latex `\Phi_t`).
 
 - store in more semantic name
 - use \def \let and \renewcommand to make symbols appear as intended
