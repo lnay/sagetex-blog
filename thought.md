@@ -38,8 +38,29 @@ people use separate tools to create diagrams. Idealogically, this impacts
 reproducibility of the research. But via SageTex, it's also easier to use the same
 expressions to generate latex formulae, as creating a plot.
 
-# Sageplot hidden option
-- use \sageplot[width=\textwidth] for example
+# SageMath plot sizing
+
+Although, not present in the official tutorials, the
+[official example](https://github.com/sagemath/sagetex/blob/master/example.tex)
+shows some invaluable options for the `\sageplot` function to adjust sizing
+among other things.
+The most common usages I have are:
+```
+\sageplot[width=\textwidth]
+```
+```
+\sageplot[width=\linewidth]
+```
+If you have trouble sizing plots correctly, especially in subfigures, this
+might be your solution.
+
+
+Another takeaway here is to have a look at the
+[official example](https://github.com/sagemath/sagetex/blob/master/example.tex)
+to come across more advanced usage of SageTex than the minor snippets in the
+tutorial page.
+The rest of the tips here however, are completely different to what you may
+find in the official material.
 
 # Use dmath environment for long expressions
 - adds newlines in appropriate places
