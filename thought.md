@@ -38,6 +38,19 @@ people use separate tools to create diagrams. Idealogically, this impacts
 reproducibility of the research. But via SageTex, it's also easier to use the same
 expressions to generate latex formulae, as creating a plot.
 
+# Sageplot hidden option
+- use \sageplot[width=\textwidth] for example
+
+# Use dmath environment for long expressions
+- adds newlines in appropriate places
+
+# Use latex hackery to overcome sage limitations
+
+- symbols in sagemath must be valid python identifiers
+- store in more semantic name
+- use \def \let and \renewcommand to make symbols appear as intended
+- \bgroup \egroup to scope this hackery
+
 # Don't put everything into sagesilent
 
 problems:
@@ -51,17 +64,5 @@ solution:
 - Makefile can be used to develop in sagemath notebook, but reference to python
   - don't explicity print (to keep import cleaner)
 
-# Use latex hackery to overcome sage limitations
-
-- symbols in sagemath must be valid python identifiers
-- store in more semantic name
-- use \def \let and \renewcommand to make symbols appear as intended
-- \bgroup \egroup to scope this hackery
-
 # Use my docker container for git(hub/lab) CI
 
-# Sageplot hidden option
-- use \sageplot[width=\textwidth] for example
-
-# Use dmath environment for long expressions
-- adds newlines in appropriate places
