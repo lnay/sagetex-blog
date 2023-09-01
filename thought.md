@@ -4,18 +4,18 @@ I've recently been using
 [SageTex](https://doc.sagemath.org/html/en/tutorial/sagetex.html) in my
 research writing.
 There's been ups and downs, benefits but also multiple drawbacks to my
-workflows until I finally settled on how to do things in a *SANE* way to
+workflows until I finally settled on how to do things in a *sane* way to
 overcome the limitations in the methods demonstrated in the
 [official tutorials](https://doc.sagemath.org/html/en/tutorial/sagetex.html).
 I've decided that instead of venting over my experiences, maybe it's better to
-channel some more positive energy into these **TOP TIPS** for using sagetex in
+channel some more positive energy into these **top tips** for using sagetex in
 larger projects.
-I'll be starting with short, easy-actionable tips that aren't present in the
+I'll be starting with short, easily-actionable tips that aren't present in the
 official tutorials, and then finishing with a couple larger pieces advice around
 overall project structure.
 
 
-To set the expectations, let me clarify on my personal reasons for including
+To set the expectations, let me clarify my personal reasons for including
 SageMath code into my document building:
 
 ### 1) Programmatically generate latex expressions to avoid errors
@@ -38,7 +38,7 @@ people use separate tools to create diagrams. Idealogically, this impacts
 reproducibility of the research. But via SageTex, it's also easier to use the same
 expressions to generate latex formulae, as creating a plot.
 
-# Don't put everyting into sagesilent
+# Don't put everything into sagesilent
 
 problems:
 - slow feedback loop
