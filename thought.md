@@ -193,7 +193,7 @@ In this example, $\beta$ is redefined to be a relatively similar $\beta^n_-$.
 The variable name in the Sage code is still `beta`, but happens to still fit
 quite well.
 However, you may want to create a symbol which displays to something very
-different to any standard symbol in SageMath, say $\mathrm{ch}_2^\beta$, in
+different to any standard symbol in SageMath, say $\mathrm{ch}_2^\beta(v)$, in
 which case the variable name will not match very well.
 In such an example, it would make sense to redefine a symbol you are unlikely
 to use, and store it to an appropriate variable name in the SageMath code:
@@ -201,7 +201,7 @@ to use, and store it to an appropriate variable name in the SageMath code:
 ```latex
 \begingroup % beginning of scope redefining \kappa (second_twisted_chern)
 \let\originalkappa\kappa
-\renewcommand\kappa{{\mathrm{ch}_2^\beta}}
+\renewcommand\kappa{{\mathrm{ch}_2^\beta(v)}}
 
 \begin{sagesilent}
 # Create symbol for kappa (to display in the latex differently)
@@ -216,7 +216,7 @@ second_twisted_chern = var("kappa")
 \endgroup % end of scope redefining \kappa (second_twisted_chern)
 ```
 This would render to:
-$$\left(\mathrm{ch}\_2^\beta + 1\right)^2$$
+$$\left(\mathrm{ch}\_2^\beta(v) + 1\right)^2$$
 
 # Don't put everything into sagesilent
 
