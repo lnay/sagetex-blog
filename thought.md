@@ -10,6 +10,9 @@ overcome the limitations in the methods demonstrated in the
 I've decided that instead of venting over my experiences, maybe it's better to
 channel some more positive energy into these **TOP TIPS** for using sagetex in
 larger projects.
+I'll be starting with short, easy-actionable tips that aren't present in the
+official tutorials, and then finishing with a couple larger pieces advice around
+overall project structure.
 
 
 To set the expectations, let me clarify on my personal reasons for including
