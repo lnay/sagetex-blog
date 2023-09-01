@@ -145,8 +145,8 @@ this.
 
 One way of getting round this, at the cost of potential chaotic hackery, is to
 make use of commands in (La)Tex such as `\let`, `\def`, and `\renewcommand` to
-move the responsibility displaying the symbols the way you want, onto the main
-LaTex document, instead of SageMath.
+move the responsibility of displaying the symbols the way you want, onto the
+main LaTex document, instead of SageMath.
 
 Suppose you want to create an expression from SageMath involving $\beta^{n}\_{-}$.
 In the SageMath code, you can only define a symbol for `beta` (displayed as
