@@ -220,6 +220,51 @@ $$\left(\mathrm{ch}\_2^\beta(v) + 1\right)^2$$
 
 # TIP 4: Don't put everything into sagesilent
 
+## Problem
+
+The path of least resistance when writing Sage Code to be used by SageTex in a
+latex document, is to write it into `sagesilent` or `sageblock` environments.
+```latex
+\begin{sagesilent}
+# long calculations:
+...
+
+final_expression = ...
+illustrative_plot = ...
+\end{sagesilent}
+
+\begin{equation}
+\sage{final_expression}
+\begin{equation}
+
+\sageplot{illustrative_plot}
+```
+
+But when iterating on the code to do the correct thing (especially so for
+creating plots), the feedback loop is very slow (run latex, run sage on
+generated script, ... then run latex again...).
+Furthermore, any syntax error will make the second step (running the generated
+SageMath script) fail completely, making you repeat the first two steps again.
+As the document gets larger, it gets even slower and irritating.
+SageMath provides a brilliant Jupyter Notebook experience, especially with the
+cells which you can run individually to make small adjustments on the fly when
+creating the code.
+It's natural to do the initial development in notebook and copy-paste into the
+SageTex environments, however you may decide to develop on the code some more
+but will now find yourself in a more difficult environent.
+My thesis here is that you should never copy-paste the code into SageTex
+environments and leave the Jupyter notebook.
+
+There are also a few extra knacks which I have with developing in the SageTex
+environments, but these are more likely to be noticed by people with more
+general software experience:
+- Syntax highlighting is poor/non-existant in some editors
+- No language intelligence i.e. no find-references, rename-symbol (this is
+  available for SageMath notebooks opened in VSCode)
+- No debugger (again available for notebooks in VSCode)
+
+## Solution
+
 problems:
 - slow feedback loop
 - one error breaks the rest
