@@ -63,7 +63,37 @@ The rest of the tips here however, are completely different to what you may
 find in the official material.
 
 # Use dmath environment for long expressions
-- adds newlines in appropriate places
+When generating long latex expressions into equation environments, you may run
+into the equations extending into the margins, or even off the page.
+
+```latex
+% demonstrate coefficients of particularly long binomial expansion
+\begin{equation}
+    \sage{expand((x+y)^10)}
+\end{equation}
+```
+(mini example)
+
+The easy fix for this is to use the `dmath` environment from the `breqn`
+package. This environent behaves very similarly to the `equation` environment,
+however it breaks the equation over multiple lines appropriately.
+
+```latex
+% in preamble:
+\usepackage{breqn}
+% ... in document body
+\begin{sagesilent}
+var("x y") # declare symbols for 'x' and 'y'
+\end{sagesilent}
+
+% demonstrate coefficients of particularly long binomial expansion
+\begin{dmath}
+    \sage{expand((x+y)^10)}
+\end{dmath}
+```
+
+(show render)
+
 
 # Use latex hackery to overcome sage limitations
 
