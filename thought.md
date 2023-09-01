@@ -305,5 +305,50 @@ recreates the required Python script whenever the notebook changes.
 Have a look at the example repository that comes with this blog post (TODO)
 to see this in action.
 
+## Following TIP 3 in conjunction with TIP 4
+
+Recall the last example in the "limiting bad stuff" subsection in TIP 3.
+This involved redefining latex commands to make arbitrary SageMath symbols
+display themselves the way you want in the document.
+
+My tip for developing the expressions which will appear in the main document,
+is that `\let`, `\def`, and `\newcommand` functions used in markdown cells
+will successfully affect the rendering of SageMath expressions.
+
+For example, create one Markdown cell with the following content:
+```markdown
+%display latex
+$\let\originalkappa\kappa
+\renewcommand\kappa{{\mathrm{ch}_2^\beta(v)}}$
+Redefining $\originalkappa$ to $\kappa$
+```
+
+Then, the output from the following code cell will be affected:
+```sage
+second_twisted_chern = var("kappa")
+final_expression = (second_twisted_chern + 1)^2
+final_expression # non-assignment line to render latex in notebook
+```
+This will create an output cell with the following:
+$$\left(\mathrm{ch}\_2^\beta(v) + 1\right)^2$$
+
+Then, once the a corresponding Python script `notebook.py` is created, this
+same expression can be used in the main LaTeX document:
+```latex
+\begin{sagesilent}
+from notebook import final_expression
+\end{sagesilent}
+
+\bgroup
+\let\originalkappa\kappa
+\renewcommand\kappa{{\mathrm{ch}_2^\beta(v)}}
+\begin{equation}
+\sage{final_expression}
+\end{equation}
+\egroup
+```
+p.s. don't forget to include `%display latex` to the first cell of the
+notebook.
+
 # TIP 5: Use my docker container for git(hub/lab) CI
 
