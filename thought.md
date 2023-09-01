@@ -175,6 +175,33 @@ unintended consequences in other parts of the document:
 \endgroup % end of scope redefining \beta
 ```
 
+In this example, $\beta$ is redefined to be a relatively similar $\beta^1_-$.
+The variable name in the Sage code is still `beta`, but happens to still fit
+quite well.
+However, you may want to create a symbol which displays to something very
+different to any standard symbol in SageMath, say $\mathrm{ch}_2^\beta$, in
+which case the variable name will not match very well.
+In such an example, it would make sense to redefine a symbol you are unlikely
+to use, and store it to an appropriate variable name in the SageMath code:
+
+```latex
+\begingroup % beginning of scope redefining \kappa (second_twisted_chern)
+\let\originalkappa\kappa
+\renewcommand\kappa{{\mathrm{ch}_2^\beta}}
+
+\begin{sagesilent}
+# Create symbol for kappa (to display in the latex differently)
+# But store it with a variable name better suited the intended mathematical
+# meaning
+second_twisted_chern = var("kappa")
+\end{sagesilent}
+
+\begin{equation*}
+\sage{ (second_twisted_chern + 1)^2 }
+\end{equation*}
+\endgroup % end of scope redefining \kappa (second_twisted_chern)
+```
+
 # Don't put everything into sagesilent
 
 problems:
