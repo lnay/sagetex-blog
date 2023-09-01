@@ -143,7 +143,7 @@ this.
 
 ## Solution
 
-One way of getting round this, at the cost of potential chaotic hackery, is to
+My way of getting round this, at the cost of potential chaotic hackery, is to
 make use of commands in (La)Tex such as `\let`, `\def`, and `\renewcommand` to
 move the responsibility of displaying the symbols the way you want, onto the
 main LaTex document, instead of SageMath.
