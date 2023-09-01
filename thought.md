@@ -109,19 +109,33 @@ var("x y") # declare symbols for 'x' and 'y'
 A big limitation of using the `\sage` function to generate formulae in a latex
 document, is that symbols in SageMath, unlike in
 [SymPy](https://www.sympy.org/en/index.html), must be valid Python
-identifiers.
-The latex representations are then a product of the Python identifiers.
+identifiers (i.e. can be a variable name).
+The LaTex representations are then derived from the variable name.
 Typically, the latex representation is precisely the identifier, such as:
 `x` is displayed $x$ (with latex `x`), and `a_t` would be displayed $a_t$
 (with latex `a_t`).
 Although the backslash `\` is disallowed in Python identifiers, certain latex
 command names are recognised and treated appropriately, for example:
 `Phi_t` is displayed $\Phi_t$ (with latex `\Phi_t`).
-
+```sage
+sage: # var() creates SageMath variables so need to give valid var names
+sage: var("x_2 Phi")
+(x_2, Phi)
+sage: latex(x_2) # latex generally matches variable name
+x_{2}
+sage: latex(Phi) # exceptions are made for common latex commands
+\Phi
+```
 In particular, the caret symbol `^` is disallowed in Python identifiers,
 making it impossible to create symbols which display with superscripts.
 But also, the `-` symbol is also disallowed, making it impossible, for
 example, to create a SageMath symbol for $\beta_{-}$.
+```sage
+sage: var("a^t")
+ValueError: The name "a^t" is not a valid Python identifier.
+sage: var("beta_{-}")
+ValueError: The name "beta_{-}" is not a valid Python identifier.
+```
 
 On the face of it, this limits the expressiveness of the expressions that can
 be generated with SageMath into LaTex documents. But there are ways around
