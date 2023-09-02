@@ -5,7 +5,7 @@ I've recently been using
 research writing.
 There's been ups and downs, benefits but also multiple drawbacks to my
 workflows until I finally settled on how to do things in a *sane* way to
-overcome the limitations in the methods demonstrated in the
+overcome the limitations in the methods demonstrated in just the
 [official tutorials](https://doc.sagemath.org/html/en/tutorial/sagetex.html).
 I've decided that instead of venting over my experiences, maybe it's better to
 channel some more positive energy into these **top tips** for using sagetex in
@@ -59,8 +59,7 @@ Another takeaway here is to have a look at the
 [official example](https://github.com/sagemath/sagetex/blob/master/example.tex)
 to come across more advanced usage of SageTex than the minor snippets in the
 tutorial page.
-The rest of the tips here however, are completely different to what you may
-find in the official material.
+The rest of the tips here however, you will not find in the official material.
 
 # TIP 2: Use dmath environment for long expressions
 When generating long latex expressions into equation environments, you may run
@@ -339,16 +338,16 @@ same expression can be used in the main LaTeX document:
 from notebook import final_expression
 \end{sagesilent}
 
-\bgroup
+\bgroup % same as \begingroup
 \let\originalkappa\kappa
 \renewcommand\kappa{{\mathrm{ch}_2^\beta(v)}}
 \begin{equation}
 \sage{final_expression}
 \end{equation}
-\egroup
+\egroup % same as \endgroup
 ```
 p.s. don't forget to include `%display latex` to the first cell of the
 notebook.
 
-# TIP 5: Use my docker container for git(hub/lab) CI
+# TIP 5: Use this docker container for git(hub/lab) CI
 
