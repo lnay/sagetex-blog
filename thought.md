@@ -349,5 +349,63 @@ from notebook import final_expression
 p.s. don't forget to include `%display latex` to the first cell of the
 notebook.
 
-# TIP 5: Use this docker container for git(hub/lab) CI
+# TIP 5: Use this docker container for Git(Hub/Lab) CI
+
+Using SageTex in your LaTeX document automatically rules you out of using
+[OverLeaf](https://www.overleaf.com/).
+The next most common method for collaborating on a document
+(or even just managing a personal project),
+is hosting the project on GitHub or GitLab.
+These platforms do not support building LaTeX documents out of the box,
+however they can set up to do so, and in particular working with SageTex too.
+The key is to provide a docker container which has both SageTex and a latex
+distribution installed. Luckily, such a container
+[exists](registry.gitlab.com/lukenaylor/latex/sagetex-image:latest).
+Then we can just create a functioning Makefile to build the pdf document, and
+run `make` from within the container.
+
+The example repository that comes with this blog (TODO) is correctly set up
+for this, and is a good starting point to try.
+Otherwise, the instructions are slightly different depending on the git
+repository hosting service:
+
+## Gitlab
+
+In the root of the repository, add a file called `.gitlab-ci.yml` file
+with the following contents:
+```yaml
+build:
+  image: registry.gitlab.com/lukenaylor/latex/sagetex-image:latest
+  script:
+    - source /root/.bashrc
+    - make || echo make failed
+  artifacts:
+    paths:
+      - "*.pdf"
+```
+
+## Github (untested)
+
+If not present, add a `.github/workflows/` directory to the repo, and add a
+file `build.yml` (name not important) with the following contents:
+```yaml
+name: Build LaTeX (with SageTex) document to pdf
+
+on:
+  push:
+    branches: ["main"] # or "master" instead
+
+jobs:
+  build:
+    container:
+      image: registry.gitlab.com/lukenaylor/latex/sagetex-image:latest
+    steps:
+    - name: Build PDF
+      run: make
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: main.pdf
+        path: main.pdf # adjust to generated pdf name
+```
 
