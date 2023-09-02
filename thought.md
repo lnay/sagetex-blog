@@ -18,7 +18,7 @@ overall project structure.
 To set the expectations, let me clarify my personal reasons for including
 SageMath code into my document building:
 
-### 1) Programmatically generate latex expressions to avoid errors
+### 1) Programmatically generate LaTeX expressions to avoid errors
 (add tiny example)
 
 At the point when I decided to start using SageTex, I was frequently making
@@ -33,10 +33,10 @@ case I worry I had done something incorrectly.
 ### 2) Include plot creation into the document build
 (add tiny example)
 
-Instead of generating plots programmatically inside the latex document, most
+Instead of generating plots programmatically inside the LaTeX document, most
 people use separate tools to create diagrams. Idealogically, this impacts
 reproducibility of the research. But via SageTex, it's also easier to use the same
-expressions to generate latex formulae, as creating a plot.
+expressions to generate LaTeX formulae, as creating a plot.
 
 # TIP 1: SageMath plot sizing
 
@@ -109,7 +109,7 @@ A big limitation of using the `\sage` function to generate formulae in a latex
 document, is that symbols in SageMath, unlike in
 [SymPy](https://www.sympy.org/en/index.html), must be valid Python
 identifiers (i.e. can be a variable name).
-The LaTex representations are then derived from the variable name.
+The LaTeX representations are then derived from the variable name.
 Typically, the latex representation is precisely the identifier, such as:
 `x` is displayed $x$ (with latex `x`), and `a_t` would be displayed $a_t$
 (with latex `a_t`).
@@ -137,7 +137,7 @@ ValueError: The name "beta_{-}" is not a valid Python identifier.
 ```
 
 On the face of it, this limits the expressiveness of the expressions that can
-be generated with SageMath into LaTex documents. But there are ways around
+be generated with SageMath into LaTeX documents. But there are ways around
 this.
 
 ## Solution
@@ -145,7 +145,7 @@ this.
 My way of getting round this, at the cost of potential chaotic hackery, is to
 make use of commands in (La)Tex such as `\let`, `\def`, and `\renewcommand` to
 move the responsibility of displaying the symbols the way you want, onto the
-main LaTex document, instead of SageMath.
+main LaTeX document, instead of SageMath.
 
 Suppose you want to create an expression from SageMath involving $\beta^{n}\_{-}$.
 In the SageMath code, you can only define a symbol for `beta` (displayed as
@@ -266,7 +266,7 @@ general software experience:
 
 As mentioned above, I recommend writing most of the SageMath code in Jupyter
 notebooks, and create well-labeled variables for the expressions and plots to
-be used in the LaTex document.
+be used in the LaTeX document.
 
 An object, say `final_expression`, can be imported from a Python script
 (not a SageMath script), say `notebook.py` as follows:
@@ -304,10 +304,10 @@ recreates the required Python script whenever the notebook changes.
 Have a look at the example repository that comes with this blog post (TODO)
 to see this in action.
 
-## Following TIP 3 in conjunction with TIP 4
+## Following tip 3 in conjunction with tip 4
 
-Recall the last example in the "limiting bad stuff" subsection in TIP 3.
-This involved redefining latex commands to make arbitrary SageMath symbols
+Recall the last example in the "limiting bad stuff" subsection in tip 3.
+This involved redefining LaTeX commands to make arbitrary SageMath symbols
 display themselves the way you want in the document.
 
 My tip for developing the expressions which will appear in the main document,
@@ -358,7 +358,7 @@ The next most common method for collaborating on a document
 is hosting the project on GitHub or GitLab.
 These platforms do not support building LaTeX documents out of the box,
 however they can set up to do so, and in particular working with SageTex too.
-The key is to provide a docker container which has both SageTex and a latex
+The key is to provide a docker container which has both SageTex and a LaTeX
 distribution installed. Luckily, such a container
 [exists](registry.gitlab.com/lukenaylor/latex/sagetex-image:latest).
 Then we can just create a functioning Makefile to build the pdf document, and
