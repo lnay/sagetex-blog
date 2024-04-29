@@ -1,5 +1,7 @@
 # Using SageTex in larger articles in a sane way
 
+## Introduction
+
 I've recently been using
 [SageTex](https://doc.sagemath.org/html/en/tutorial/sagetex.html) in my
 research writing.
@@ -38,7 +40,7 @@ people use separate tools to create diagrams. Idealogically, this impacts
 reproducibility of the research. But via SageTex, it's also easier to use the same
 expressions to generate LaTeX formulae, as creating a plot.
 
-# TIP 1: SageMath plot sizing
+## TIP 1: SageMath plot sizing
 
 Although, not present in the official tutorials, the
 [official example](https://github.com/sagemath/sagetex/blob/master/example.tex)
@@ -61,7 +63,7 @@ to come across more advanced usage of SageTex than the minor snippets in the
 tutorial page.
 The rest of the tips here however, you will not find in the official material.
 
-# TIP 2: Use dmath environment for long expressions
+## TIP 2: Use dmath environment for long expressions
 When generating long latex expressions into equation environments, you may run
 into the equations extending into the margins, or even off the page.
 
@@ -101,9 +103,9 @@ var("x y") # declare symbols for 'x' and 'y'
 (show render)
 
 
-# TIP 3: Use latex hackery to overcome Sage limitations
+## TIP 3: Use latex hackery to overcome Sage limitations
 
-## Problem
+### Problem
 
 A big limitation of using the `\sage` function to generate formulae in a latex
 document, is that symbols in SageMath, unlike in
@@ -140,7 +142,7 @@ On the face of it, this limits the expressiveness of the expressions that can
 be generated with SageMath into LaTeX documents. But there are ways around
 this.
 
-## Solution
+### Solution
 
 My way of getting round this, at the cost of potential chaotic hackery, is to
 make use of commands in (La)Tex such as `\let`, `\def`, and `\renewcommand` to
@@ -168,7 +170,7 @@ var("beta")
 This will render to the following:
 $$(\beta^n_- + 1)^2$$
 
-## Limiting the bad stuff
+### Limiting the bad stuff
 
 Redefining default values for things is inherently ugly, so here are a couple
 of ways of mitigating the harm.
@@ -217,9 +219,9 @@ second_twisted_chern = var("kappa")
 This would render to:
 $$\left(\mathrm{ch}\_2^\beta(v) + 1\right)^2$$
 
-# TIP 4: Don't put everything into sagesilent
+## TIP 4: Don't put everything into sagesilent
 
-## Problem
+### Problem
 
 The path of least resistance when writing Sage Code to be used by SageTex in a
 latex document, is to write it into `sagesilent` or `sageblock` environments.
@@ -262,7 +264,7 @@ general software experience:
   available for SageMath notebooks opened in VSCode)
 - No debugger (again available for notebooks in VSCode)
 
-## Solution
+### Solution
 
 As mentioned above, I recommend writing most of the SageMath code in Jupyter
 notebooks, and create well-labeled variables for the expressions and plots to
@@ -304,7 +306,7 @@ recreates the required Python script whenever the notebook changes.
 Have a look at the example repository that comes with this blog post (TODO)
 to see this in action.
 
-## Following tip 3 in conjunction with tip 4
+### Following tip 3 in conjunction with tip 4
 
 Recall the last example in the "limiting bad stuff" subsection in tip 3.
 This involved redefining LaTeX commands to make arbitrary SageMath symbols
@@ -349,7 +351,7 @@ from notebook import final_expression
 p.s. don't forget to include `%display latex` to the first cell of the
 notebook.
 
-# TIP 5: Use this docker container for Git(Hub/Lab) CI
+## TIP 5: Use this docker container for Git(Hub/Lab) CI
 
 Using SageTex in your LaTeX document automatically rules you out of using
 [OverLeaf](https://www.overleaf.com/).
@@ -369,7 +371,7 @@ for this, and is a good starting point to try.
 Otherwise, the instructions are slightly different depending on the git
 repository hosting service:
 
-## Gitlab
+### Gitlab
 
 In the root of the repository, add a file called `.gitlab-ci.yml` file
 with the following contents:
