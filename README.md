@@ -83,7 +83,7 @@ pdflatex main.tex # possibly repeated a few times
 
 Furthermore, if you were to be using `latexmk`, either directly, or via you editor, then that first step may involve extra unnecessary compilation attemtps.
 
-### Solution: `latexmk` + `Makefile`
+### Solution: latexmk + Makefile
 
 Firstly, using `latexmk` is generally useful. If you aren't using it, maybe check out my [other post](https://lukideangeometry.xyz/blog/latexmk) about it. Also, `make` is standard CLI tool for specifying how to build a project, you may already have, or can easily install.
 
@@ -113,12 +113,12 @@ latexmk -use-make -pvc
 ... to build your document and watch to rebuild on any changes to the `.tex` files.
 The same can be achieved in LaTeX editors if set up to use `latexmk` in the appropriate way.
 
-#### Caveat:
+#### Caveat
 `latexmk` will only call `make main.sagetex.sout` if it is not present. If you make changes to any of the SageMath code after the first compile, you would need to run `make main.sagetex.sout` yourself. The upside is that if you use `latexmk -pvc`, then this will trigger a rebuild of the project automatically.
 
 This isn't necessarily a bad thing, and could allow you to isolate your tasks without worrying about the main document braking on any given change.
 
-## TIP 3: Use `dmath` environment for long expressions
+## TIP 3: Use dmath environment for long expressions
 When generating long latex expressions into equation environments, you may run
 into the equations extending into the margins, or even off the page.
 
@@ -158,9 +158,9 @@ var("x y") # declare symbols for 'x' and 'y'
 (TODO show render)
 
 
-## TIP 4: Don't put everything into `sagesilent``
+## TIP 4: Don't put everything into sagesilent
 
-### Problem: 
+### Problem: Bad SageMath experience inside LaTeX
 
 The path of least resistance when writing Sage Code to be used by SageTex in a
 latex document, is to write it into `sagesilent` or `sageblock` environments.
@@ -261,7 +261,7 @@ notebook.py: notebook.ipynb
 notebook.
 
 
-## TIP 5: Make use of `latex_name` named argument for variable creation
+## TIP 5: Make use of the latex_name named argument for var
 
 ### Problem: LaTeX Representations
 
@@ -301,7 +301,7 @@ On the face of it, this limits the expressiveness of the expressions that can
 be generated with SageMath into LaTeX documents. But there are ways around
 this.
 
-### Solution: `latex_name`
+### Solution: latex_name
 
 Turns out `var` takes a named argument `latex_name` to provide a LaTeX representation as a string. A tip here is to use "raw" strings (`r"..."`) to avoid having to escape all the backslashes you are likely using.
 
