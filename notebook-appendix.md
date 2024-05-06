@@ -154,7 +154,7 @@ notebook_tex/calculations.tex: calculations.ipynb
 **on top of `nbconvert`.**
 
 Now you can run `make notebook_tex/calculations.tex` to generate the required file.
-Alternatively, if you use the `--use-make` option with `latexmk` then this will
+Alternatively, if you use the `-use-make` option with `latexmk` then this will
 automatically be called for you.
 TODO DOUBLE CHECK THIS IS TRUE.
 
