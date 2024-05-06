@@ -213,6 +213,13 @@ For reference, this is the cut-down `notebook-preamble.tex` file I ended up with
 \usepackage{mathrsfs}
 ```
 
+### Referencing the Appendix
+
+Now scroll through the generated `notebook_tex/calculations.tex` file.
+You will see that `nbconvert` will have added `\label`s to all the (sub)sections.
+You can then `\ref` these labels from the main tex file to link to sections of the notebook
+appendix as in the examples suggested in the introduction.
+
 ## Appendix: Dangers of the Manual Approach
 
 This post is to inspire and comes with no guarantees to the reader that these exact steps
