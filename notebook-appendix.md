@@ -1,4 +1,4 @@
-# Jupyter Notebook Appendices in LaTeX Document
+# Jupyter Notebook Appendix in LaTeX
 
 I wrote another [post](https://lukideangeometry.xyz/blog/sagetex) where I promote
 the use of [SageTeX](https://doc.sagemath.org/html/en/tutorial/sagetex.html)
